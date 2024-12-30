@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Login";
+}
+@section Styles
+{
+
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/Home/Login.css" />
+</head>
+<div class="mos-login-content">
+    <div class="mos-logo-content">
+        <div class="mos-logo-wrapper">
+            <img class="mos-base-icon" src="~/Images/mos-base-logo.svg">
+        </div>
+    </div>
+    <div class="mos-login-box-wrapper">
+        <div class="mos-login-box">
+            <div class="login-box-header">
+                <p>Manufacturing Operation System</p>
+            </div>
+            <form method="post" asp-action="Login" class="login-form">
+                <div id="login-input">
+                    <label>사용자 : *</label>
+                    <br />
+                    <input type="text" name="userAccount" class="form-control" required />
+                </div>
+                <div id="login-input">
+                    <label>비밀번호 : *</label>
+                    <br />
+                    <input type="password" name="Point" class="form-control" required />
+                </div>
+                <div class="login-box-bottom">
+                    <button type="submit" class="btn btn-primary">로그인</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    @ViewBag.ErrorMessage
+}
+
+@section Scripts
+{
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+}
